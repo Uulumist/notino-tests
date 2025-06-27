@@ -1,0 +1,17 @@
+{
+  "name": "notino-tests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write '**/*.{ts,js,json,md}'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.53.0",
+    "@types/node": "^24.0.3",
+    "prettier": "^3.6.2"
+  }
+}
