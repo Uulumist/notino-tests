@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "trace": "playwright show-trace test-results/notino-Main-page-elements-top-bar-elements-chromium/trace.zip",
     "format": "prettier --write '**/*.{ts,js,json,md}'"
   },
   "keywords": [],
