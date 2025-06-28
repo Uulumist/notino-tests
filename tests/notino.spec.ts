@@ -1,12 +1,21 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, Page, Locator } from "@playwright/test";
 
-const top_bar_elements = [
+interface Elements {
+  locator: (page: Page) => Locator;
+  name: string;
+  attribute?: {
+    type: string;
+    value: string;
+  };
+}
+
+const top_bar_elements: Elements[] = [
   {
-    locator: (page) => page.getByTestId("call-info-wrapper"),
+    locator: (page: Page): Locator => page.getByTestId("call-info-wrapper"),
     name: "phone number",
   },
   {
-    locator: (page) =>
+    locator: (page: Page): Locator =>
       page.getByRole("link", { name: "Kohaletoimetamise teave" }),
     name: "delivery info",
     attribute: {
@@ -31,7 +40,7 @@ test.describe("Main page elements", () => {
 
   test("top bar elements link", async ({ page }) => {
     for (const { locator, name, attribute } of top_bar_elements) {
-      if (name === "delivery info") {
+      if (attribute) {
         await test.step(`Check href attribute of: ${name}`, async () => {
           await expect
             .soft(locator(page))
