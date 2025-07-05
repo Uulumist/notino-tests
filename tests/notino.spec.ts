@@ -145,7 +145,7 @@ const header_elements: Elements[] = [
   },
   {
     locator: (page: Page): Locator =>
-      page.getByTestId("menu-wrapper").getByText("Inspiratsioon"),
+      page.getByTestId('menu-wrapper').getByText('Inspiratsioon').nth(1),
     name: "Inspiration menu",
     text: "Inspiratsioon",
   },
